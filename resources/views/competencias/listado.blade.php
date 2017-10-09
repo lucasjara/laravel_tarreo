@@ -11,20 +11,15 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-11">
+            <div class="col-md-10">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Listado de Usuarios</div>
+                    <div class="panel-heading">Listado de Competencias</div>
                     <div class="panel-body">
                         <table id="users-table" class="table table-striped">
                             <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>Rut</td>
-                                <td>Nombre</td>
-                                <td>Apellidos</td>
-                                <td>Correo</td>
-                                <td>Encargado</td>
-                                <td>Num. Encargado</td>
+                                <td>Nombre Competencia</td>
                             </tr>
                             </thead>
                         </table>
@@ -44,15 +39,10 @@
             var dato = $('#users-table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: 'http://localhost:8000/usuarios/listado',
+                ajax: 'http://localhost:8000/competencias/listado',
                 columns: [
                     {data: 'id', name: 'id'},
-                    {data: 'rut', name: 'rut'},
                     {data: 'name', name: 'name'},
-                    {data: 'last_name', name: 'last_name'},
-                    {data: 'email', name: 'email'},
-                    {data: 'relevant_person', name: 'relevant_person'},
-                    {data: 'number_relevant_person', name: 'number_relevant_person'}
                 ]
             });
         });

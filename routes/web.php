@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 //  Rutas Usuarios
 Route::get('/usuarios', 'UserController@index')->name('usuarios');
 Route::get('/usuarios/listado', 'UserController@obtener_datos');
+// Rutas Competencias
+Route::get('/competencias', 'CompetitionController@index')->name('competencias');
+Route::get('/competencias/listado', 'CompetitionController@obtener_datos');
