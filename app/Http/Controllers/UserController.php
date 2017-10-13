@@ -11,7 +11,18 @@ class UserController extends Controller
         return view('usuarios/listado');
     }
     public function obtener_datos(){
-        return DataTables::eloquent(User::query())->make(true);
+
+        $usuario = User::select(['id','rut','dv','name','last_name','email']);
+        return DataTables::of($usuario)
+            ->addColumn('action', function ($usuario) {
+                return '
+                <a href="#editar-'.$usuario->id.'" class="btn btn-xs btn-primary">
+                            <i class="glyphicon glyphicon-edit"></i> Editar</a>
+                       <a href="'.route('eliminar_usuario',['id' =>$usuario->id]).'" class="btn btn-xs btn-danger">
+                            <i class="glyphicon glyphicon-edit"></i> Eliminar</a>';
+            })
+            ->make(true);
+
     }
 
     /**
@@ -29,10 +40,11 @@ class UserController extends Controller
         return redirect('usuarios');
     }
     /**
-     * Metodo para Eliminar Usuario
+     * Metodo para eliminar Competencia
      */
     public function delete(Request $request){
-        $usuario = User::find($request->input('id'));
+        $id = $request->input('id');
+        $usuario = User::find($id);
         $usuario->delete();
         return redirect('usuarios');
     }

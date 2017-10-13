@@ -12,6 +12,7 @@
     <!-- Ref  CSS-->
     <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="{{ asset('css/alinear_tabla.css') }}">
     <div class="container">
         <a href="agregar.php" class="btn btn-success" data-toggle="modal" data-target="#myModal"><span
                     class="glyphicon glyphicon-plus"></span>Agregar Competencia</a>
@@ -20,11 +21,12 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">Listado de Competencias</div>
                     <div class="panel-body">
-                        <table id="users-table" class="table table-striped">
+                        <table id="competition-table" class="table table-striped">
                             <thead>
                             <tr>
                                 <td>ID</td>
                                 <td>Nombre Competencia</td>
+                                <td>Acciones</td>
                             </tr>
                             </thead>
                         </table>
@@ -69,7 +71,7 @@
 
     <script>
         $(function () {
-            var tabla = $('#users-table').DataTable({
+            var tabla = $('#competition-table').DataTable({
                 language:{
                     url: "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
                 },
@@ -79,6 +81,7 @@
                 columns: [
                     {data: 'id', name: 'id'},
                     {data: 'name', name: 'name'},
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });

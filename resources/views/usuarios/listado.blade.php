@@ -28,8 +28,7 @@
                                 <td>Nombre</td>
                                 <td>Apellidos</td>
                                 <td>Correo</td>
-                                <td>Encargado</td>
-                                <td>Num. Encargado</td>
+                                <td>Acciones</td>
                             </tr>
                             </thead>
                         </table>
@@ -122,8 +121,7 @@
                     {data: 'name', name: 'name'},
                     {data: 'last_name', name: 'last_name'},
                     {data: 'email', name: 'email'},
-                    {data: 'relevant_person', name: 'relevant_person'},
-                    {data: 'number_relevant_person', name: 'number_relevant_person'}
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });
