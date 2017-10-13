@@ -11,6 +11,7 @@
 @section('content')
     <!-- Ref  CSS-->
     <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <div class="container">
         <a href="agregar.php" class="btn btn-success" data-toggle="modal" data-target="#myModal"><span
                     class="glyphicon glyphicon-plus"></span>Agregar Usuario</a>
@@ -101,13 +102,17 @@
             </form>
         </div>
     </div>
+    <script src="//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"></script>
     <script src="https://datatables.yajrabox.com/js/jquery.min.js"></script>
     <script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
     <script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
     <script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
     <script>
         $(function () {
-            var dato = $('#users-table').DataTable({
+            var tabla = $('#users-table').DataTable({
+                language:{
+                  url: "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+                },
                 processing: true,
                 serverSide: true,
                 ajax: 'http://localhost:8000/usuarios/listado',

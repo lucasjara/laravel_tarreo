@@ -25,3 +25,4 @@ Route::post('/usuarios/registrar','UserController@insert')->name('registro_usuar
 // Rutas Competencias
 Route::get('/competencias', 'CompetitionController@index')->name('competencias');
 Route::get('/competencias/listado', 'CompetitionController@obtener_datos');
+Route::post('/competencias/registrar','CompetitionController@insert')->name('registro_competencia');

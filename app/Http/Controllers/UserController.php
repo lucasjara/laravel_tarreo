@@ -16,7 +16,6 @@ class UserController extends Controller
 
     /**
      * Metodo para ingreso de Usuarios
-     *
      */
     public function insert(Request $request){
         $usuario = new User;
@@ -27,6 +26,14 @@ class UserController extends Controller
         $usuario->email = $request->input("email");
         $usuario->password = bcrypt($request->input("password"));
         $usuario->save();
+        return redirect('usuarios');
+    }
+    /**
+     * Metodo para Eliminar Usuario
+     */
+    public function delete(Request $request){
+        $usuario = User::find($request->input('id'));
+        $usuario->delete();
         return redirect('usuarios');
     }
 }
