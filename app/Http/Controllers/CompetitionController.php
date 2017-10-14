@@ -17,7 +17,7 @@ class CompetitionController extends Controller
         return DataTables::of($competencia)
             ->addColumn('action', function ($competencia) {
             return '
-                <a href="#editar-'.$competencia->id.'" class="btn btn-xs btn-primary">
+                <a href=""  data-toggle="modal" data-target="#modal_editar"  data-id="'.$competencia->id.'" data-name="'.$competencia->name.'" class="btn btn-xs btn-primary editar_boton">
                             <i class="glyphicon glyphicon-edit"></i> Editar</a>
                        <a href="'.route('eliminar_competencia',['id' =>$competencia->id]).'" class="btn btn-xs btn-danger">
                             <i class="glyphicon glyphicon-edit"></i> Eliminar</a>';
@@ -29,6 +29,16 @@ class CompetitionController extends Controller
      */
     public function insert(Request $request){
         $competencia = new Competition;
+        $competencia->name = $request->input('name');
+        $competencia->save();
+        return redirect('competencias');
+    }
+    /**
+     * Metodo para editar Competencia
+     */
+    public function edit(Request $request){
+        $id = $request->input('id_edit');
+        $competencia = Competition::find($id);
         $competencia->name = $request->input('name');
         $competencia->save();
         return redirect('competencias');
