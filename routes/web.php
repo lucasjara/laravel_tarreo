@@ -19,15 +19,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//  Rutas Usuarios
+//----------------------------------Rutas Usuarios---------------------------------------
 Route::get('/usuarios', 'UserController@index')->name('usuarios');
 Route::get('/usuarios/listado', 'UserController@obtener_datos');
 Route::post('/usuarios/registrar','UserController@insert')->name('registro_usuario');
 Route::post('/usuarios/editar','UserController@edit')->name('editar_usuario');
 Route::any('/usuarios/eliminar','UserController@delete')->name('eliminar_usuario');
-// Rutas Competencias
+//----------------------------------Rutas Competencias-----------------------------------
 Route::get('/competencias', 'CompetitionController@index')->name('competencias');
 Route::get('/competencias/listado', 'CompetitionController@obtener_datos');
 Route::post('/competencias/registrar','CompetitionController@insert')->name('registro_competencia');
 Route::post('/competencias/editar','CompetitionController@edit')->name('editar_competencia');
 Route::any('/competencias/eliminar','CompetitionController@delete')->name('eliminar_competencia');
+//----------------------------------Rutas Universidades----------------------------------
+Route::get('/universidades', 'UniversityController@index')->name('universidades');
+Route::get('/universidades/listado', 'UniversityController@obtener_datos');
+Route::post('/universidades/registrar','UniversityController@insert')->name('registro_universidad');
+Route::post('/universidades/editar','UniversityController@edit')->name('editar_universidad');
+Route::any('/universidades/eliminar','UniversityController@delete')->name('eliminar_universidad');
