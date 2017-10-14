@@ -76,36 +76,8 @@
             </div>
         </div>
     </nav>
-    <div id="wrapper" class="active">
-        <div id="sidebar-wrapper">
-            <ul id="sidebar_menu" class="sidebar-nav">
-                <li class="sidebar-brand"><a id="menu-toggle" href="#">Menu<span id="main_icon"
-                                                                                 class="glyphicon glyphicon-align-justify"></span></a>
-                </li>
-            </ul>
-            <ul class="sidebar-nav" id="sidebar">
-                <li><a>Usuarios<span class="sub_icon glyphicon glyphicon-user"></span></a></li>
-                <ul class="sidebar-nav" id="sidebar">
-                    <li><a>Crear<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-                    <li><a>Modificar<span class="sub_icon glyphicon glyphicon-pencil"></span></a></li>
-                </ul>
-                <li><a>Puntajes<span class="sub_icon glyphicon glyphicon-star"></span></a></li>
-                <ul class="sidebar-nav" id="sidebar">
-                    <li><a>Agregar<span class="sub_icon glyphicon glyphicon-link"></span></a></li>
-                    <li><a>Modificar<span class="sub_icon glyphicon glyphicon-pencil"></span></a></li>
-                    <li><a>Listado<span class="sub_icon glyphicon glyphicon-list-alt"></span></a></li>
-                </ul>
-                <li><a>Competencias<span class="sub_icon glyphicon glyphicon-fire"></span></a></li>
-            </ul>
-        </div>
-        <div id="page-content-wrapper">
-            <div class="page-content inset">
-                <div class="row">
-                    <br>
-                    @yield('content')
-                </div>
-            </div>
-        </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        @yield('content')
     </div>
 </div>
 
