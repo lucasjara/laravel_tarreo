@@ -37,3 +37,9 @@ Route::get('/universidades/listado', 'UniversityController@obtener_datos');
 Route::post('/universidades/registrar','UniversityController@insert')->name('registro_universidad');
 Route::post('/universidades/editar','UniversityController@edit')->name('editar_universidad');
 Route::any('/universidades/eliminar','UniversityController@delete')->name('eliminar_universidad');
+//----------------------------------Rutas Perfiles--------------------------------------
+Route::get('/perfiles', 'ProfileController@index')->name('perfiles');
+Route::get('/perfiles/listado', 'ProfileController@obtener_datos');
+Route::post('/perfiles/registrar','ProfileController@insert')->name('registro_perfil');
+Route::post('/perfiles/editar','ProfileController@edit')->name('editar_perfil');
+Route::any('/perfiles/eliminar','ProfileController@delete')->name('eliminar_perfil');
