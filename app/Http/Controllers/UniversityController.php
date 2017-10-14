@@ -25,7 +25,7 @@ class UniversityController extends Controller
             ->make(true);
     }
     /**
-     * Metodo para ingreso de Competencias
+     * Metodo para ingreso de Universidades
      */
     public function insert(Request $request){
         $universidad = new University;
@@ -34,7 +34,7 @@ class UniversityController extends Controller
         return redirect('universidades');
     }
     /**
-     * Metodo para editar Competencia
+     * Metodo para editar Universidad
      */
     public function edit(Request $request){
         $id = $request->input('id_edit');
@@ -44,7 +44,7 @@ class UniversityController extends Controller
         return redirect('universidades');
     }
     /**
-     * Metodo para eliminar Competencia
+     * Metodo para eliminar Universidad
      */
     public function delete(Request $request){
         $id = $request->input('id');
