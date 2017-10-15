@@ -40,18 +40,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <ul class="nav navbar-nav">
-                    &nbsp;<li class="dropdown">
-                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Mantenedores<span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                         <li><a href="{{ route('usuarios') }}">Mantenedor Usuarios</a></li>
-                         <li><a href="{{ route('competencias') }}">Mantenedor Competencias</a></li>
-                         <li><a href="{{ route('universidades') }}">Mantenedor Universidades</a></li>
-                         <li><a href="{{ route('perfiles') }}">Mantenedor Perfiles</a></li>
-                         <li><a href="{{ route('categorias') }}">Mantenedor Categorias</a></li>
-                     </ul>
-                    </li>
-                </ul>
+
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
@@ -95,7 +84,18 @@
                     <ul class="nav navbar-nav">
                         <a class="navbar-brand" href="#">Logotipo</a>
                         <li><a href="{{ url('/home') }}">Home</a></li>
-                        <li class="active"><a href="">Lista de Competencias</a></li>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Mantenedores<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ route('usuarios') }}">Mantenedor Usuarios</a></li>
+                                    <li><a href="{{ route('competencias') }}">Mantenedor Competencias</a></li>
+                                    <li><a href="{{ route('universidades') }}">Mantenedor Universidades</a></li>
+                                    <li><a href="{{ route('perfiles') }}">Mantenedor Perfiles</a></li>
+                                    <li><a href="{{ route('categorias') }}">Mantenedor Categorias</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </ul>
                     <a href="" class="btn btn-success btn_agregar navbar-btn pull-right" data-toggle="modal" data-target="#modal_agregar"><span
                         class="glyphicon glyphicon-plus"></span>Agregar Competencia</a>

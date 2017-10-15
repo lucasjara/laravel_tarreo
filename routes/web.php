@@ -1,22 +1,14 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 //----------------------------------Rutas Usuarios---------------------------------------
 Route::get('/usuarios', 'UserController@index')->name('usuarios');
@@ -48,3 +40,9 @@ Route::get('/categorias/listado', 'CategoryController@obtener_datos');
 Route::post('/categorias/registrar','CategoryController@insert')->name('registro_categoria');
 Route::post('/categorias/editar','CategoryController@edit')->name('editar_categoria');
 Route::any('/categorias/eliminar','CategoryController@delete')->name('eliminar_categoria');
+//----------------------------------Rutas Puntajes--------------------------------------
+Route::get('/puntajes', 'ScoreController@index')->name('puntajes');
+Route::get('/puntajes/listado', 'ScoreController@obtener_datos');
+Route::post('/puntajes/registrar','ScoreController@insert')->name('registro_puntaje');
+Route::post('/puntajes/editar','ScoreController@edit')->name('editar_puntaje');
+Route::any('/puntajes/eliminar','ScoreController@delete')->name('eliminar_puntaje');

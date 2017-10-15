@@ -13,8 +13,7 @@
     <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <link rel="stylesheet" href="{{ asset('css/alinear_tabla.css') }}">
-    <div class="container">    
-    
+    <div class="container">
         <div class="row">
             <br>
             <div class="col-md-8 col-md-offset-2">

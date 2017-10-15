@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Lucas Jara
  * Date: 14-10-2017
- * Time: 11:56
+ * Time: 23:08
  */
 ?>
 @extends('layouts.menu')
@@ -12,19 +12,24 @@
     <!-- Ref  CSS-->
     <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="{{ asset('css/alinear_tabla.css') }}">
     <div class="container">
         <div class="row">
             <br>
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Listado de Perfiles</div>
+                    <div class="panel-heading">Listado de Competencias</div>
                     <div class="panel-body">
-                        <table id="profile-table" class="table table-striped">
+                        <table id="score-table" class="table table-striped">
                             <thead>
                             <tr>
                                 <td>ID</td>
-                                <td>Tipo Perfil</td>
+                                <td>Nombre</td>
+                                <td>Apellido</td>
+                                <td>PC</td>
+                                <td>Consolas</td>
+                                <td>Trivia</td>
+                                <td>Flash</td>
+                                <td>Total</td>
                                 <td>Acciones</td>
                             </tr>
                             </thead>
@@ -35,14 +40,14 @@
         </div>
     </div>
     <div class="modal fade" id="modal_agregar" role="dialog">
-        <form class="form-horizontal" method="POST" action="{{ route('registro_perfil') }}">
+        <form class="form-horizontal" method="POST" action="{{ route('registro_competencia') }}">
             {{ csrf_field() }}
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Agregar Perfil</h4>
+                        <h4 class="modal-title">Agregar Competencia</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -64,13 +69,13 @@
         </form>
     </div>
     <div class="modal fade" id="modal_editar" role="dialog">
-        <form class="form-horizontal" method="POST" action="{{ route('editar_perfil') }}">
+        <form class="form-horizontal" method="POST" action="{{ route('editar_competencia') }}">
             {{ csrf_field() }}
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Editar Perfil</h4>
+                        <h4 class="modal-title">Editar Competencia</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -93,5 +98,5 @@
     <script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
     <script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
     <script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
-    <script src="{{ asset('js/perfiles/script.js') }}"></script>
+    <script src="{{ asset('js/puntajes/script.js') }}"></script>
 @endsection
