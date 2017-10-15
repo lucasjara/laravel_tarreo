@@ -18,7 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 //----------------------------------Rutas Usuarios---------------------------------------
 Route::get('/usuarios', 'UserController@index')->name('usuarios');
 Route::get('/usuarios/listado', 'UserController@obtener_datos');
@@ -43,3 +42,9 @@ Route::get('/perfiles/listado', 'ProfileController@obtener_datos');
 Route::post('/perfiles/registrar','ProfileController@insert')->name('registro_perfil');
 Route::post('/perfiles/editar','ProfileController@edit')->name('editar_perfil');
 Route::any('/perfiles/eliminar','ProfileController@delete')->name('eliminar_perfil');
+//----------------------------------Rutas Categorias------------------------------------
+Route::get('/categorias', 'CategoryController@index')->name('categorias');
+Route::get('/categorias/listado', 'CategoryController@obtener_datos');
+Route::post('/categorias/registrar','CategoryController@insert')->name('registro_categoria');
+Route::post('/categorias/editar','CategoryController@edit')->name('editar_categoria');
+Route::any('/categorias/eliminar','CategoryController@delete')->name('eliminar_categoria');

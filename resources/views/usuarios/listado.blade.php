@@ -17,7 +17,8 @@
         <a href="" class="btn btn-success" data-toggle="modal" data-target="#modal_agregar"><span
                     class="glyphicon glyphicon-plus"></span>Agregar Usuario</a>
         <div class="row">
-            <div class="col-md-11">
+            <br>
+            <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Listado de Usuarios</div>
                     <div class="panel-body">
