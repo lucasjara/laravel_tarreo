@@ -20,7 +20,7 @@
         background-attachment: fixed;
         background-size: cover;">
 <div id="app">
-    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px; background-color: #24292E;color:#24292E;">
+    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px; background-color: #24292E;color:#24292E; border-color:#3E464F; ">
         <div class="container">
             <div class="navbar-header">
 
@@ -87,7 +87,24 @@
         </div>
     </nav>
     <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <div class="container">
+        <br>
+        <div class="row">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <a class="navbar-brand" href="#">Logotipo</a>
+                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li class="active"><a href="">Lista de Competencias</a></li>
+                    </ul>
+                    <a href="" class="btn btn-success btn_agregar navbar-btn pull-right" data-toggle="modal" data-target="#modal_agregar"><span
+                        class="glyphicon glyphicon-plus"></span>Agregar Competencia</a>
+                </div>          
+            </nav>       
+        </div>
+        </div>
         @yield('content')
+
     </div>
 </div>
 
