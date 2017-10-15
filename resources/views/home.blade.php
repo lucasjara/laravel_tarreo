@@ -3,7 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10">
+        <br>
+        <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
@@ -19,5 +20,7 @@
             </div>
         </div>
     </div>
+    <script src="https://datatables.yajrabox.com/js/jquery.min.js"></script>
+    <script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
 </div>
 @endsection

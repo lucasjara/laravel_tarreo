@@ -16,9 +16,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 </head>
-<body>
+<body style="background-image: url({{url('img/fondo.jpg')}});background-size: cover;width: 100%;height: 100%;background-position: center center;background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;">
 <div id="app">
-    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px;">
+    <nav class="navbar navbar-default navbar-static-top" style="margin-bottom: 0px; background-color: #24292E;color:#24292E;">
         <div class="container">
             <div class="navbar-header">
 
@@ -32,15 +34,23 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}" style="color:white;">
                     E-Students INACAP 2017
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    &nbsp;
+                    &nbsp;<li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Mantenedores<span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                         <li><a href="{{ route('usuarios') }}">Mantenedor Usuarios</a></li>
+                         <li><a href="{{ route('competencias') }}">Mantenedor Competencias</a></li>
+                         <li><a href="{{ route('universidades') }}">Mantenedor Universidades</a></li>
+                         <li><a href="{{ route('perfiles') }}">Mantenedor Perfiles</a></li>
+                         <li><a href="{{ route('categorias') }}">Mantenedor Categorias</a></li>
+                     </ul>
+                    </li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

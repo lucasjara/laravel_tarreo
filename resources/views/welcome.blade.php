@@ -64,7 +64,9 @@
             }
         </style>
     </head>
-    <body>
+    <body style="background-image: url({{url('img/infest.png')}});background-size: cover;width: 100%;height: 100%;background-position: center center;background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -77,12 +79,6 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-            </div>
         </div>
     </body>
 </html>
