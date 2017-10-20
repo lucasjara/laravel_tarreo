@@ -11,10 +11,9 @@ use Illuminate\Http\Request;
 class ScoreController extends Controller
 {
     public function index(){
-        $categories = DB::select("SELECT DISTINCT name from categories");
-        $competencia = DB::select('SELECT id, name from competitions');
+        $competencia = DB::select('SELECT categories.id, competitions.name from competitions INNER JOIN categories ON categories.id_competition = competitions.id');
         $users = DB::select('SELECT id, name,last_name from users ORDER by name ASC');
-        return view('puntajes/listado',['categories' => $categories,'competitions'=>$competencia,'users' => $users]);
+        return view('puntajes/listado',['competitions'=>$competencia,'users' => $users]);
     }
 
     public function obtener_datos(){
@@ -41,7 +40,9 @@ class ScoreController extends Controller
      */
     public function insert(Request $request){
         $puntaje = new Score;
-        $puntaje->name = $request->input('name');
+        $puntaje->score = $request->input('points');
+        $puntaje->id_user = $request->input('id_user');
+        $puntaje->id_category = $request->input('id_category');
         $puntaje->save();
         return redirect('puntajes');
     }

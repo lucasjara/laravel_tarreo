@@ -20,7 +20,7 @@ class CreateScoresTable extends Migration
             $table->integer('id_category')->unsigned();
             $table->foreign('id_category')->references('id')->on('categories');
             $table->integer('score');
-            $table->string('year');
+            $table->string('year')->nullable();
             $table->timestamps();
         });
     }

@@ -11,7 +11,6 @@
 @section('content')
     <!-- Ref  CSS-->
     <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
-    <link href="{{ asset('select2/css/select2.min.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <div class="container">
         <div class="row">
@@ -41,7 +40,7 @@
         </div>
     </div>
     <div class="modal fade" id="modal_agregar" role="dialog">
-        <form class="form-horizontal" method="POST" action="{{ route('registro_usuario') }}">
+        <form class="form-horizontal" method="POST" action="{{ route('registro_puntaje') }}">
             {{ csrf_field() }}
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -54,7 +53,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="pwd">Usuario:</label>
                             <div class="col-sm-7">
-                                <select class="form-control" id="select_user" name="name">
+                                <select class="form-control" id="select_user" name="id_user">
 
                                     @foreach ($users as $user)
                                         <option value="{{ $user->id }}">{{ $user->id }} - {{ $user->name }} {{ $user->last_name }}</option>
@@ -63,22 +62,24 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-4" for="pwd">Categorias:</label>
+                            <label class="control-label col-sm-4" for="pwd">Competencia:</label>
                             <div class="col-sm-7">
-                                <select class="form-control select2-search__field" id="select_category" name="category">
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                <select class="form-control" id="select_competition" name="id_category">
+                                    @foreach ($competitions as $competition)
+                                        <option value="{{ $competition->id }}">{{ $competition->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-4" for="pwd">Competencia:</label>
-                            <div class="col-sm-6">
-                                <select class="form-control" id="select_competition" name="id_competition">
-                                    @foreach ($competitions as $competition)
-                                        <option value="{{ $competition->id }}">{{ $competition->name }}</option>
-                                    @endforeach
+                            <label class="control-label col-sm-4" for="pwd">Puntos:</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="points" name="points">
+                                    <option value="3">3 puntos</option>
+                                    <option value="5">5 puntos</option>
+                                    <option value="10">10 puntos</option>
+                                    <option value="15">15 puntos</option>
+                                    <option value="20">20 puntos</option>
                                 </select>
                             </div>
                         </div>
@@ -126,3 +127,4 @@
     <script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
     <script src="{{ asset('js/puntajes/script.js') }}"></script>
 @endsection
+

@@ -13,6 +13,8 @@ $(document).ready(function() {
                 {data: 'name', name: 'name'},
                 {data: 'last_name', name: 'last_name'},
                 {data: 'email', name: 'email'},
+                {data: 'age', name: 'age'},
+                {data: 'relevant_person', name: 'relevant_person'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });

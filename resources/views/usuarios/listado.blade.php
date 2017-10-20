@@ -29,6 +29,8 @@
                                 <td>Nombre</td>
                                 <td>Apellidos</td>
                                 <td>Correo</td>
+                                <td>Edad</td>
+                                <td>Encargado</td>
                                 <td>Acciones</td>
                             </tr>
                             </thead>

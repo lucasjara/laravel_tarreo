@@ -15,7 +15,7 @@ class UserController extends Controller
     }
     public function obtener_datos(){
 
-        $usuario = User::select(['id','rut','dv','name','last_name','email']);
+        $usuario = User::select(['id','rut','dv','name','last_name','email','age','relevant_person']);
         return DataTables::of($usuario)
             ->addColumn('action', function ($usuario) {
                 return '
@@ -25,7 +25,6 @@ class UserController extends Controller
                             <i class="glyphicon glyphicon-edit"></i> Eliminar</a>';
             })
             ->make(true);
-
     }
 
     /**
