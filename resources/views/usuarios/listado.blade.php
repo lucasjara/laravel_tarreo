@@ -65,30 +65,52 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-4" for="pwd">Nombre:</label>
-                            <div class="col-sm-6">
+                            <label class="control-label col-sm-4" for="pwd">Nombres:</label>
+                            <div class="col-sm-7">
                                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="pwd">Apellidos:</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-7">
                                 <input type="text" class="form-control" id="last_name" name="last_name"
                                        value="{{ old('last_name') }}">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="pwd">Correo:</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-7">
                                 <input type="text" class="form-control" id="email" name="email"
                                        value="{{ old('email') }}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-4" for="pwd">Contraseña:</label>
-                            <div class="col-sm-6">
-                                <input type="password" class="form-control" id="password" name="password"
-                                       value="{{ old('password') }}">
+                            <label class="control-label col-sm-4" for="pwd">Direccion:</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="address" name="address"
+                                       value="{{ old('address') }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Universidades:</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="select_category" name="id_university">
+                                    @foreach ($universities as $university)
+                                        <option value="{{ $university->id }}">{{ $university->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Carrera:</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="university_course" name="university_course">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Edad:</label>
+                            <div class="col-sm-7">
+                                <input type="number" class="form-control" id="age" name="age">
                             </div>
                         </div>
                     </div>

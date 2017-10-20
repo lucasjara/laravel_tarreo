@@ -1,6 +1,5 @@
 $(document).ready(function() {
     $(function () {
-        var dato=0;
         var tabla = $('#score-table').DataTable({
             language:{
                 url: "https://cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
@@ -42,6 +41,5 @@ $(document).ready(function() {
         $('#id_modificar').val(dato);
         $('#edit_name').val($(this).attr('data-name'));
     });
-
 
 });

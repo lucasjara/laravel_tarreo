@@ -83,7 +83,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <a class="navbar-brand" href="#">Logotipo</a>
-                        <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ url('puntajes') }}">Listado de Puntajes</a></li>
                         <ul class="nav navbar-nav">
                             <li class="dropdown">
                                 <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Mantenedores<span class="caret"></span></a>
@@ -98,7 +98,7 @@
                         </ul>
                     </ul>
                     <a href="" class="btn btn-success btn_agregar navbar-btn pull-right" data-toggle="modal" data-target="#modal_agregar"><span
-                        class="glyphicon glyphicon-plus"></span>Agregar Competencia</a>
+                        class="glyphicon glyphicon-plus"></span>Agregar</a>
                 </div>          
             </nav>       
         </div>

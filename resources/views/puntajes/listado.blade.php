@@ -11,13 +11,14 @@
 @section('content')
     <!-- Ref  CSS-->
     <link href="{{ asset('css/modal.css') }}" rel="stylesheet">
+    <link href="{{ asset('select2/css/select2.min.css') }}" rel="stylesheet"/>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <div class="container">
         <div class="row">
             <br>
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Listado de Competencias</div>
+                    <div class="panel-heading">Listado de Puntajes</div>
                     <div class="panel-body">
                         <table id="score-table" class="table table-striped">
                             <thead>
@@ -40,20 +41,45 @@
         </div>
     </div>
     <div class="modal fade" id="modal_agregar" role="dialog">
-        <form class="form-horizontal" method="POST" action="{{ route('registro_competencia') }}">
+        <form class="form-horizontal" method="POST" action="{{ route('registro_usuario') }}">
             {{ csrf_field() }}
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Agregar Competencia</h4>
+                        <h4 class="modal-title">Agregar Puntaje</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label class="control-label col-sm-4" for="pwd">Nombre:</label>
+                            <label class="control-label col-sm-4" for="pwd">Usuario:</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="select_user" name="name">
+
+                                    @foreach ($users as $user)
+                                        <option value="{{ $user->id }}">{{ $user->id }} - {{ $user->name }} {{ $user->last_name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Categorias:</label>
+                            <div class="col-sm-7">
+                                <select class="form-control select2-search__field" id="select_category" name="category">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->name }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Competencia:</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                                <select class="form-control" id="select_competition" name="id_competition">
+                                    @foreach ($competitions as $competition)
+                                        <option value="{{ $competition->id }}">{{ $competition->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -68,7 +94,7 @@
             </div>
         </form>
     </div>
-    <div class="modal fade" id="modal_editar" role="dialog">
+    <div class="modal fade" id="modal_detalle" role="dialog">
         <form class="form-horizontal" method="POST" action="{{ route('editar_competencia') }}">
             {{ csrf_field() }}
             <div class="modal-dialog">
@@ -81,7 +107,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-4" for="pwd">Nombre:</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="edit_name" name="name" value="{{ old('name') }}">
+                                <input type="text" class="form-control" id="edit_name" name="edit_name" value="{{ old('name') }}">
                             </div>
                         </div>
                         <input type="hidden" name="id_edit" id="id_modificar" value="" >

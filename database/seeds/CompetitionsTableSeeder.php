@@ -103,7 +103,7 @@ class CompetitionsTableSeeder extends Seeder
             'created_at' => date("Y-m-d H:i:s"),
         ]);
         DB::table('competitions')->insert([
-            'name' => 'Trivia',
+            'name' => 'Trivia Nivel 1',
             'created_at' => date("Y-m-d H:i:s"),
         ]);
     }

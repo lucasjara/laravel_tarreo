@@ -32,6 +32,8 @@ class CreateUsersTable extends Migration
             $table->foreign('id_university')->references('id')->on('universities');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('address')->nullable();
+            $table->string('age')->nullable();
         });
     }
 

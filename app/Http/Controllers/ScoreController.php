@@ -11,7 +11,10 @@ use Illuminate\Http\Request;
 class ScoreController extends Controller
 {
     public function index(){
-        return view('puntajes/listado');
+        $categories = DB::select("SELECT DISTINCT name from categories");
+        $competencia = DB::select('SELECT id, name from competitions');
+        $users = DB::select('SELECT id, name,last_name from users ORDER by name ASC');
+        return view('puntajes/listado',['categories' => $categories,'competitions'=>$competencia,'users' => $users]);
     }
 
     public function obtener_datos(){
@@ -28,10 +31,8 @@ class ScoreController extends Controller
         return DataTables::of($resumido)
             ->addColumn('action', function ($resumido) {
                 return '
-                <a href=""  data-toggle="modal" data-target="#modal_editar"  data-id="'.$resumido->id.'" data-name="'.$resumido->name.'" class="btn btn-xs btn-primary editar_boton">
-                            <i class="glyphicon glyphicon-edit"></i> Editar</a>
-                       <a href="'.route('eliminar_puntaje',['id' =>$resumido->id]).'" class="btn btn-xs btn-danger">
-                            <i class="glyphicon glyphicon-edit"></i> Eliminar</a>';
+                <a href=""  data-toggle="modal" data-target="#modal_detalle" class="btn btn-xs btn-primary editar_boton">
+                            <i class="glyphicon glyphicon-search"></i> Ver Detalle</a>';
             })
             ->make(true);
     }
@@ -63,4 +64,5 @@ class ScoreController extends Controller
         $puntaje->delete();
         return redirect('puntajes');
     }
+
 }

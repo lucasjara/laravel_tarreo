@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
+use Illuminate\Support\Facades\DB;
 use App\User;
+use App\University;
 class UserController extends Controller
 {
     public function index(){
-        return view('usuarios/listado');
+        $universidades = DB::select("SELECT id, name from universities");
+        return view('usuarios/listado',['universities'=>$universidades]);
     }
     public function obtener_datos(){
 
@@ -35,7 +38,11 @@ class UserController extends Controller
         $usuario->name = $request->input('name');
         $usuario->last_name = $request->input("last_name");
         $usuario->email = $request->input("email");
-        $usuario->password = bcrypt($request->input("password"));
+        $usuario->address = $request->input("address");
+        $usuario->id_university = $request->input("id_university");
+        $usuario->university_course = $request->input("university_course");
+        $usuario->age = $request->input("age");
+        $usuario->password = bcrypt('123');
         $usuario->save();
         return redirect('usuarios');
     }
