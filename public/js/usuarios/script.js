@@ -7,6 +7,7 @@ $(document).ready(function() {
             processing: true,
             serverSide: true,
             ajax: 'http://localhost:8000/usuarios/listado',
+            order: [[ 0,'desc']],
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'rut', name: 'rut'},
@@ -17,6 +18,7 @@ $(document).ready(function() {
                 {data: 'relevant_person', name: 'relevant_person'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
+
         });
     })
     $("#users-table").on('click','tbody > tr > td:nth-child(6) > a.btn.btn-xs.btn-primary.editar_boton', function () {
