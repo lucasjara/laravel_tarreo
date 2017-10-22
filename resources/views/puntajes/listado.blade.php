@@ -30,7 +30,6 @@
                                 <td>Trivia</td>
                                 <td>Flash</td>
                                 <td>Total</td>
-                                <td>Acciones</td>
                             </tr>
                             </thead>
                         </table>
@@ -126,5 +125,6 @@
     <script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
     <script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
     <script src="{{ asset('js/puntajes/script.js') }}"></script>
+    <script src="{{ asset('js/puntajes.js') }}"></script>
 @endsection
 

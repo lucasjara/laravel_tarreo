@@ -15,7 +15,8 @@ class UserController extends Controller
     }
     public function obtener_datos(){
 
-        $usuario = User::select(['id','rut','dv','name','last_name','email','age','relevant_person']);
+        $usuario = User::select(['id','name',DB::raw('CONCAT(rut, "-", dv) AS rut'),'last_name','email','age','relevant_person']);
+        //echo $usuario;
         return DataTables::of($usuario)
             ->addColumn('action', function ($usuario) {
                 return '

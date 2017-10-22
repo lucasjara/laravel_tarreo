@@ -11,8 +11,8 @@ use Illuminate\Http\Request;
 class ScoreController extends Controller
 {
     public function index(){
-        $competencia = DB::select('SELECT categories.id, competitions.name from competitions INNER JOIN categories ON categories.id_competition = competitions.id');
-        $users = DB::select('SELECT id, name,last_name from users ORDER by name ASC');
+        $competencia = DB::select('SELECT categories.id, competitions.name from competitions   JOIN categories ON categories.id_competition = competitions.id');
+        $users = DB::select('SELECT id, name,last_name from users ORDER by id ASC');
         return view('puntajes/listado',['competitions'=>$competencia,'users' => $users]);
     }
 

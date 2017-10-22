@@ -6,6 +6,10 @@ $(document).ready(function() {
             },
             processing: true,
             serverSide: true,
+            bInfo : false,
+            autoWidth: true,
+            responsive: true,
+            scrollY: '400px',
             ajax: 'http://localhost:8000/usuarios/listado',
             order: [[ 0,'desc']],
             columns: [
@@ -21,7 +25,7 @@ $(document).ready(function() {
 
         });
     })
-    $("#users-table").on('click','tbody > tr > td:nth-child(6) > a.btn.btn-xs.btn-primary.editar_boton', function () {
+    $("#users-table").on('click','tbody > tr > td:nth-child(8) > a.btn.btn-xs.btn-primary.editar_boton', function () {
         var dato = $(this).attr('data-id');
         $('#id_modificar').val(dato);
         $('#edit_name').val($(this).attr('data-name'));

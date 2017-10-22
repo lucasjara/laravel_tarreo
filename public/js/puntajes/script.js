@@ -24,7 +24,6 @@ $(document).ready(function() {
                     };
                     return (intVal(data.pc)+intVal(data.consolas)+intVal(data.trivia)+intVal(data.flash));
                 }, name: 'total', searchable: false,orderable: false},
-                {data: 'action', name: 'action', orderable: false, searchable: false}
             ],
             "footerCallback": function ( tfoot, data, start, end, display) {
                 var api = this.api();

@@ -18,6 +18,7 @@ class CategoryController extends Controller
     public function obtener_datos(){
         $categoria = DB::table('categories')->join('competitions', 'competitions.id', '=', 'categories.id_competition')
                     ->select('categories.id', 'categories.name', 'competitions.name as competition','competitions.id as ide');
+
         return DataTables::of($categoria)
             ->addColumn('action', function ($categoria) {
                 return '
