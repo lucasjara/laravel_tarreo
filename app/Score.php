@@ -15,4 +15,8 @@ class Score extends Model
     {
         return $this->belongsTo('App\Category');
     }
+    public function events()
+    {
+        return $this->belongsTo('App\Event');
+    }
 }
