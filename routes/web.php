@@ -43,7 +43,12 @@ Route::any('/categorias/eliminar','CategoryController@delete')->name('eliminar_c
 //----------------------------------Rutas Puntajes--------------------------------------
 Route::get('/puntajes', 'ScoreController@index')->name('puntajes');
 Route::get('/puntajes/listado', 'ScoreController@obtener_datos');
-Route::any('/puntajes/ajax_competencias', 'ScoreController@search_competitions');
 Route::post('/puntajes/registrar','ScoreController@insert')->name('registro_puntaje');
 Route::post('/puntajes/editar','ScoreController@edit')->name('editar_puntaje');
 Route::any('/puntajes/eliminar','ScoreController@delete')->name('eliminar_puntaje');
+//----------------------------------Rutas Eventos--------------------------------------
+Route::get('/eventos', 'EventController@index')->name('eventos');
+Route::get('/eventos/listado', 'EventController@obtener_datos');
+Route::post('/eventos/registrar','EventController@insert')->name('registro_evento');
+Route::post('/eventos/editar','EventController@edit')->name('editar_evento');
+Route::any('/eventos/eliminar','EventController@delete')->name('eliminar_evento');

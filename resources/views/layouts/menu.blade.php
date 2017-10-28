@@ -93,6 +93,7 @@
                                     <li><a href="{{ route('universidades') }}">Mantenedor Universidades</a></li>
                                     <li><a href="{{ route('perfiles') }}">Mantenedor Perfiles</a></li>
                                     <li><a href="{{ route('categorias') }}">Mantenedor Categorias</a></li>
+                                    <li><a href="{{ route('eventos') }}">Mantenedor de Eventos</a></li>
                                 </ul>
                             </li>
                         </ul>
