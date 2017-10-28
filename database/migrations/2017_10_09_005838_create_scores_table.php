@@ -22,7 +22,6 @@ class CreateScoresTable extends Migration
             $table->integer('id_event')->unsigned();
             $table->foreign('id_event')->references('id')->on('events');
             $table->integer('score');
-            $table->string('year')->nullable();
             $table->timestamps();
         });
     }

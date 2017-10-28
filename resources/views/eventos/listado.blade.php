@@ -25,6 +25,7 @@
                             <tr>
                                 <td>ID</td>
                                 <td>Nombre Evento</td>
+                                <td>Año</td>
                                 <td>Acciones</td>
                             </tr>
                             </thead>
@@ -49,6 +50,12 @@
                             <label class="control-label col-sm-4" for="pwd">Nombre:</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Año:</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="year" name="year" value="{{ old('year') }}">
                             </div>
                         </div>
                     </div>
@@ -77,6 +84,12 @@
                             <label class="control-label col-sm-4" for="pwd">Nombre:</label>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control" id="edit_name" name="name" value="{{ old('name') }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Año:</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="year" name="year" value="{{ old('year') }}">
                             </div>
                         </div>
                         <input type="hidden" name="id_edit" id="id_modificar" value="" >

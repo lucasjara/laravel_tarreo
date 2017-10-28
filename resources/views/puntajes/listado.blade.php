@@ -14,10 +14,29 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <div class="container">
         <div class="row">
-            <br>
             <div class="col-md-10 col-md-offset-1">
+                <div class="panel panel-default">
+                    <div class="panel panel-heading">Puntaje Evento</div>
+                    <div class="panel panel-body">
+                        <form action="" class="form-inline">
+                            <div class="form-group col-md-5 col-md-offset-4">
+                                <label for="evento">Evento:</label>
+                                <select class="form-control" id="select_event" name="id_event">
+                                    @foreach ($events as $event)
+                                        <option value="{{ $event->id }}"> {{ $event->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Listado de Puntajes</div>
+                    <div class="panel-heading">Puntajes por Participante</div>
                     <div class="panel-body">
                         <table id="score-table" class="table table-striped">
                             <thead>

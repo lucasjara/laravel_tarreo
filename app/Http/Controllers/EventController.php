@@ -13,11 +13,11 @@ class EventController extends Controller
     }
 
     public function obtener_datos(){
-        $evento = Event::select(['id','name']);
+        $evento = Event::all(['id','name','year']);
         return DataTables::of($evento)
             ->addColumn('action', function ($evento) {
                 return '
-                <a href=""  data-toggle="modal" data-target="#modal_editar"  data-id="'.$evento->id.'" data-name="'.$evento->name.'" class="btn btn-xs btn-primary editar_boton">
+                <a href=""  data-toggle="modal" data-target="#modal_editar"  data-id="'.$evento->id.'" data-name="'.$evento->name.'" data-year="'.$evento->year.'" class="btn btn-xs btn-primary editar_boton">
                             <i class="glyphicon glyphicon-edit"></i> Editar</a>
                        <a href="'.route('eliminar_evento',['id' =>$evento->id]).'" class="btn btn-xs btn-danger">
                             <i class="glyphicon glyphicon-edit"></i> Eliminar</a>';
@@ -30,8 +30,9 @@ class EventController extends Controller
     public function insert(Request $request){
         $evento = new Event;
         $evento->name = $request->input('name');
+        $evento->year = $request->input('year');
         $evento->save();
-        return redirect('competencias');
+        return redirect('eventos');
     }
     /**
      * Metodo para editar Evento
@@ -40,8 +41,9 @@ class EventController extends Controller
         $id = $request->input('id_edit');
         $evento = Event::find($id);
         $evento->name = $request->input('name');
+        $evento->year = $request->input('year');
         $evento->save();
-        return redirect('competencias');
+        return redirect('eventos');
     }
     /**
      * Metodo para eliminar Evento
@@ -50,6 +52,6 @@ class EventController extends Controller
         $id = $request->input('id');
         $evento = Event::find($id);
         $evento->delete();
-        return redirect('competencias');
+        return redirect('eventos');
     }
 }

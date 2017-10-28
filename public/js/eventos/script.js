@@ -10,6 +10,7 @@ $(document).ready(function() {
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'name', name: 'name'},
+                {data: 'year', name: 'year'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });
