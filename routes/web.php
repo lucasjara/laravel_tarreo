@@ -42,11 +42,11 @@ Route::post('/categorias/editar','CategoryController@edit')->name('editar_catego
 Route::any('/categorias/eliminar','CategoryController@delete')->name('eliminar_categoria');
 //----------------------------------Rutas Puntajes--------------------------------------
 Route::get('/puntajes', 'ScoreController@index')->name('puntajes');
-//Route::post('/puntajes', 'ScoreController@index')->name('puntajes_post');
-Route::get('/puntajes/listado', 'ScoreController@obtener_datos');
 Route::post('/puntajes/registrar','ScoreController@insert')->name('registro_puntaje');
 Route::post('/puntajes/editar','ScoreController@edit')->name('editar_puntaje');
 Route::any('/puntajes/eliminar','ScoreController@delete')->name('eliminar_puntaje');
+Route::post('/puntajes/listado', 'ScoreController@obtener_datos');
+Route::get('/puntajes/listado', 'ScoreController@obtener_datos_get');
 //----------------------------------Rutas Eventos--------------------------------------
 Route::get('/eventos', 'EventController@index')->name('eventos');
 Route::get('/eventos/listado', 'EventController@obtener_datos');

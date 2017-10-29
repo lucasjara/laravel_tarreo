@@ -14,20 +14,25 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
     <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default">
-                    <div class="panel panel-heading">Puntaje Evento</div>
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel panel-heading">Selecciona Competencia</div>
                     <div class="panel panel-body">
-                        <form action="" class="form-inline">
-                            <div class="form-group col-md-5 col-md-offset-4">
-                                <label for="evento">Evento:</label>
-                                <select class="form-control" id="select_event" name="id_event">
-                                    @foreach ($events as $event)
-                                        <option value="{{ $event->id }}"> {{ $event->name }}</option>
-                                    @endforeach
-                                </select>
+                        <form id="formulario_ajax" method="POST" role="form" class="form-inline">
+                            {{ csrf_field() }}
+                            <div class="form-group">
+                                <label class="control-label col-md-2" for="pwd">Competencia:</label>
+                                <div class="col-md-6 col-md-offset-2">
+                                    <select class="form-control" id="id_event_search" name="id_event">
+                                        <option value="0">TODOS</option>
+                                        @foreach ($events as $event)
+                                            <option value="{{ $event->id }}"> {{ $event->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="clearfix"></div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Buscar</button>
+                            <button id="boton_busqueda_ajax" class="btn btn-primary">Buscar</button>
                         </form>
                     </div>
                 </div>
@@ -98,6 +103,16 @@
                                     <option value="10">10 puntos</option>
                                     <option value="15">15 puntos</option>
                                     <option value="20">20 puntos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-4" for="pwd">Competencia:</label>
+                            <div class="col-sm-7">
+                                <select class="form-control" id="select_event" name="id_event">
+                                    @foreach ($events as $event)
+                                        <option value="{{ $event->id }}"> {{ $event->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
