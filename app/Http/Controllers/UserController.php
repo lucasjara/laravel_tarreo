@@ -10,7 +10,7 @@ use App\University;
 class UserController extends Controller
 {
     public function index(){
-        $universidades = DB::select("SELECT id, name from universities");
+        $universidades = University::all();
         return view('usuarios/listado',['universities'=>$universidades]);
     }
     public function obtener_datos(){
@@ -42,7 +42,7 @@ class UserController extends Controller
         $usuario->id_university = $request->input("id_university");
         $usuario->university_course = $request->input("university_course");
         $usuario->age = $request->input("age");
-        $usuario->password = bcrypt('123');
+        $usuario->password = bcrypt(123);
         $usuario->id_profile = 2;
         $usuario->save();
         return redirect('usuarios');

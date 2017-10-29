@@ -10,8 +10,8 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        $categories = DB::select("SELECT DISTINCT name from categories");
-        $competencia = DB::select('SELECT id, name from competitions');
+        $categories = Category::all();
+        $competencia = Competition::all();
         return view('categorias/listado',['categories' => $categories,'competitions'=>$competencia]);
     }
 
