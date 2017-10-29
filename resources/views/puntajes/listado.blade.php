@@ -24,7 +24,6 @@
                                 <label class="control-label col-md-2" for="pwd">Competencia:</label>
                                 <div class="col-md-6 col-md-offset-2">
                                     <select class="form-control" id="id_event_search" name="id_event">
-                                        <option value="0">TODOS</option>
                                         @foreach ($events as $event)
                                             <option value="{{ $event->id }}"> {{ $event->name }}</option>
                                         @endforeach
@@ -41,7 +40,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Puntajes por Participante</div>
+                    <div class="panel-heading">Puntaje Total por Participante</div>
                     <div class="panel-body">
                         <table id="score-table" class="table table-striped">
                             <thead>
@@ -54,6 +53,7 @@
                                 <td>Trivia</td>
                                 <td>Flash</td>
                                 <td>Total</td>
+                                <td>Detalle</td>
                             </tr>
                             </thead>
                         </table>

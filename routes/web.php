@@ -47,6 +47,7 @@ Route::post('/puntajes/editar','ScoreController@edit')->name('editar_puntaje');
 Route::any('/puntajes/eliminar','ScoreController@delete')->name('eliminar_puntaje');
 Route::post('/puntajes/listado', 'ScoreController@obtener_datos');
 Route::get('/puntajes/listado', 'ScoreController@obtener_datos_get');
+Route::get('/puntajes/detalle/{id}/{id_event}','ScoreController@detalle')->where(['id' => '[0-9]+'])->name('detalle_puntaje');
 //----------------------------------Rutas Eventos--------------------------------------
 Route::get('/eventos', 'EventController@index')->name('eventos');
 Route::get('/eventos/listado', 'EventController@obtener_datos');
